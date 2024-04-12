@@ -67,3 +67,86 @@ class Produto:
 
     def calcular_preço_total(self, quantidade):
         return self.preço * quantidade
+class ContaBancária:
+    def _init_(self, númerodeconta, saldo, titular):
+        self.númerodeconta = númerodeconta
+        self.saldo = saldo
+        self.titular = titular
+
+    def depositar(self, valor):
+        self.total=self.saldo+valor
+        return f"{self.titular} está depositando R$ {valor}.\n Saldo atual de R$ {self.total}"
+    
+    def sacardinheiro(self,valor):
+        self.total=self.saldo-valor
+        return f"{self.titular} está sacando R$ {valor}.\n Saldo atual de R$ {self.saldo}"
+class Triangulo:
+    def _init_(self, lado1, lado2, lado3):
+        self.lado1 = lado1
+        self.lado2 = lado2
+        self.lado3 = lado3
+
+    def perimetro(self):
+        todos=self.lado1 + self.lado2 + self.lado3
+        return f'o perimetro e igual: {todos}'
+
+    def area(self):
+        todos=self.lado1 + self.lado2 + self.lado3 / 2
+        return f'o perimetro e igual: {todos}'
+class Livro:
+    def _init_(self, titulo, autor, num_paginas):
+        self.titulo = titulo
+        self.autor = autor
+        self.num_paginas = num_paginas
+
+    def mostrar_informacoes(self):
+        print("Título:", self.titulo)
+        print("Autor:", self.autor)
+        print("Número de páginas:", self.num_paginas)
+
+    def calcular_palavras_por_pagina(self, total_palavras):
+        palavras_por_pagina = total_palavras / self.num_paginas
+        return palavras_por_pagina
+class Retangulo:
+    def _init_(self, altura, largura):
+        self.altura = altura
+        self.largura = largura
+
+    def calcular_area(self):
+        return self.altura * self.largura
+
+    def calcular_perimetro(self):
+        return 2 * (self.altura + self.largura)
+class Estudante:
+    def _init_(self, nome, idade, notas):
+        self.nome = nome
+        self.idade = idade
+        self.notas = notas
+
+    def calcular_media(self):
+        if len(self.notas) == 0:
+            return 0
+        else:
+            return sum(self.notas) / len(self.notas)
+
+    def verificar_aprovacao(self):
+        media = self.calcular_media()
+        if media >= 6.0:
+            return "Aprovado"
+        else:
+            return "Reprovado"
+class Pedido:
+    def _init_(self):
+        self.itens = {} 
+        self.total = 0.0  
+        self.status = "Pendente" 
+
+    def adicionar_item(self, item, preco):
+        self.itens[item] = preco
+        self.total += preco
+
+    def calcular_total(self):
+        return self.total
+
+    def alterar_status(self, novo_status):
+        self.status = novo_status
