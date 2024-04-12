@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class ContaBancária:
     def __init__(self, númerodeconta, saldo, titular):
         self.númerodeconta = númerodeconta
@@ -11,10 +12,14 @@ class ContaBancária:
     def sacardinheiro(self,valor):
         self.total=self.saldo-valor
         return f"{self.titular} está sacando R$ {valor}.\n Saldo atual de R$ {self.saldo}"
+=======
+from classes import ContaBancária
+>>>>>>> 71fe917cf7842161f2b83b6cab73f66060855206
 
 if __name__ == "_main":
     conta = ContaBancária("0987656",11,"pessoa humana")
     print(conta.depositar(100))
+<<<<<<< HEAD
     print(conta.sacardinheiro(100))
     
 
@@ -38,3 +43,6 @@ if __name__ == "main":
     print(lados.área())
 
     
+=======
+    print(conta.sacardinheiro(100))
+>>>>>>> 71fe917cf7842161f2b83b6cab73f66060855206
